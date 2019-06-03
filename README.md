@@ -30,13 +30,29 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Describe the biggest difference between `.forEach` & `.map`.
 
+- [ ] Both items will call every item in an array and execute a block of code. However, only the .map() method will return a new array. If you aren't careful, your .forEach() method can modify your original array and give you unexpected results, therefore a .map() method that automatically creates a new array may be favorable.
+
 2. What is the difference between a function and a method?
+
+- [ ] Although both perform similar operations, a method only works on an object, whereas a function can be on its own. Methods are found in object oriented programming. 
 
 3. What is closure?
 
+- [ ]  Closure could also be referred to as scope in programming. For instance there are local and global functions and variables. A local variable can pull global variables, but a function living in the global scope cannot accept a local variable living in a function; unless it has been returned in some cases. You must be mindful when creating variables, and when you'll need to access those variables in the future.
+
 4. Describe the four rules of the 'this' keyword.
 
+- [ ] Window/Global Object Binding: When in global scope, this will refer to the window/console object.
+
+- [ ] Implicit Binding: The object will be whatever is to the left of the dot. This will "reset" `this` to the object you're referring to. You can then use dot notation to access it's values with this.value.
+
+- [ ] New Binding: This will create a new object based on a constructor function. This is a "template" of an object that with the `new` keyword will generate a new variable with all of the constructor's values. Essentially we're creating a function that creates an object for us.
+
+- [ ] Explicit Binding: Whenever JavaScript’s call or apply method is used, this is explicitly defined. We can explicitly pull values into the new objects and create new context for them.
+ 
 5. Why do we need super() in an extended class?
+
+- [ ] Super() pulls in the values of the previous constructor. This is especially useful because we can pull in all of the object values from the previous, then add new ones that pertain specifically to the new object. For instance we might create a base class of Person, but then we might have an extended class of Occupation. Each person would have an occupation, therefore we can extend the Person class with the Occupation class to talk about their line of work. We can pass in values to Occupation without disturbing the Person class.
 
 ## Project Set up
 
