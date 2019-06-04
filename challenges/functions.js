@@ -7,27 +7,22 @@
   * In the body of the function return the callback with the two parameters that you created
 */
 
-const consume = (callback) => {
-  return callback;
-};
+//This is the pool of functions that the callback can refer to.
+const add = (a, b) => a + b;
+const subtract = (a, b) => a - b;
+const multiply = (a, b) => a * b;
+const divide = (a, b) => a / b;
+const greeting = (a, b) => "Hello " + a + " " + b + ", nice to meet you!";
 
-const add = (a, b) => {
-  return a + b;
-};
 
-const multiply = (a, b) => {
-  return a * b;
-};
 
-const greeting = (a, b) => {
-  return a + " " + b;
-}
+//This is the actual callback function because it takes in a function, making it a higher order function.
+const consume = (a, b, callback) => callback(a, b);
 
-console.log(consume(add(2, 4)));
-console.log(consume(multiply(30, 15)));
-console.log(consume(multiply(30, 15)));
-console.log(consume(greeting("Hello", "crewl world")));
-
+console.log(consume(5, 10, add));
+console.log(consume(5, 10, multiply));
+console.log(consume(5, 10, subtract));
+console.log(consume(5, 10, divide));
 
 
 
@@ -41,9 +36,9 @@ console.log(consume(greeting("Hello", "crewl world")));
 
 
 /* Step 3: Check your work by un-commenting the following calls to consume(): */
-consume(2,2,add); // 4
-consume(10,16,multiply); // 160
-consume("Mary","Poppins", greeting); // Hello Mary Poppins, nice to meet you!
+console.log(consume(2,2,add)); // 4
+console.log(consume(10,16,multiply)); // 160
+console.log(consume("Mary","Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
 
 
 // ==== Closures ==== 
@@ -66,4 +61,4 @@ function myFunction() {
   };
   nestedFunction();
 }
-(myFunction());
+myFunction();
